@@ -1,0 +1,23 @@
+export const SITE = {
+  website: "https://latentspacey.github.io/",
+  author: "Rahul Kumar",
+  profile: "https://github.com/latentspacey",
+  desc: "Notes from the latent space — writing on AI, machine learning, and the ideas in between.",
+  title: "Latent Space",
+  ogImage: "astropaper-og.jpg",
+  lightAndDarkMode: true,
+  postPerIndex: 4,
+  postPerPage: 4,
+  scheduledPostMargin: 15 * 60 * 1000,
+  showArchives: true,
+  showBackButton: true,
+  editPost: {
+    enabled: false,
+    text: "Edit page",
+    url: "https://github.com/latentspacey/latentspacey.github.io/edit/main/",
+  },
+  dynamicOgImage: true,
+  dir: "ltr",
+  lang: "en",
+  timezone: "Asia/Kolkata",
+} as const;
