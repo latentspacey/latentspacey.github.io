@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" role="img" aria-labelledby="title desc">
+  <title id="title">Phase transition during transformer training</title>
+  <desc id="desc">A loss curve that drops gradually, then sharply when induction heads form, then continues to decrease.</desc>
+  <style>
+    .axis { stroke: #94a3b8; stroke-width: 1.2; }
+    .grid { stroke: #cbd5e1; stroke-width: 0.6; stroke-dasharray: 3 4; }
+    .label { font-family: -apple-system, ui-sans-serif, system-ui, sans-serif; fill: #475569; font-size: 12px; }
+    .heading { font-family: -apple-system, ui-sans-serif, system-ui, sans-serif; fill: #0f172a; font-size: 14px; font-weight: 600; }
+    .annot { font-family: -apple-system, ui-sans-serif, system-ui, sans-serif; fill: #b45309; font-size: 12px; }
+    .curve { stroke: #ea580c; stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .marker { stroke: #b45309; stroke-width: 1.2; stroke-dasharray: 4 4; }
+    @media (prefers-color-scheme: dark) {
+      .axis { stroke: #64748b; }
+      .grid { stroke: #334155; }
+      .label { fill: #cbd5e1; }
+      .heading { fill: #f1f5f9; }
+    }
+  </style>
+
+  <text class="heading" x="300" y="28" text-anchor="middle">Loss curve during transformer training</text>
+
+  <!-- gridlines -->
+  <line class="grid" x1="80" y1="100" x2="560" y2="100" />
+  <line class="grid" x1="80" y1="170" x2="560" y2="170" />
+  <line class="grid" x1="80" y1="240" x2="560" y2="240" />
+
+  <!-- axes -->
+  <line class="axis" x1="80" y1="60" x2="80" y2="320" />
+  <line class="axis" x1="80" y1="320" x2="560" y2="320" />
+
+  <!-- axis labels -->
+  <text class="label" x="44" y="190" text-anchor="middle" transform="rotate(-90 44 190)">cross-entropy loss</text>
+  <text class="label" x="320" y="355" text-anchor="middle">training steps</text>
+
+  <!-- phase transition marker -->
+  <line class="marker" x1="270" y1="60" x2="270" y2="320" />
+  <text class="annot" x="280" y="80">induction heads form</text>
+  <text class="annot" x="280" y="96">(in-context learning emerges)</text>
+
+  <!-- the loss curve -->
+  <path class="curve" d="M 80 80 C 130 95, 200 135, 250 158 C 260 162, 268 165, 270 167 C 280 195, 290 228, 310 245 C 380 260, 470 285, 560 295" />
+
+  <!-- start/end markers -->
+  <circle cx="80" cy="80" r="3" fill="#ea580c" />
+  <circle cx="560" cy="295" r="3" fill="#ea580c" />
+</svg>
