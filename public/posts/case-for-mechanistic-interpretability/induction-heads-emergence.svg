@@ -2,22 +2,27 @@
   <title id="title">Phase transition during transformer training</title>
   <desc id="desc">A loss curve that drops gradually, then sharply when induction heads form, then continues to decrease.</desc>
   <style>
-    .axis { stroke: #94a3b8; stroke-width: 1.2; }
-    .grid { stroke: #cbd5e1; stroke-width: 0.6; stroke-dasharray: 3 4; }
-    .label { font-family: -apple-system, ui-sans-serif, system-ui, sans-serif; fill: #475569; font-size: 12px; }
-    .heading { font-family: -apple-system, ui-sans-serif, system-ui, sans-serif; fill: #0f172a; font-size: 14px; font-weight: 600; }
-    .annot { font-family: -apple-system, ui-sans-serif, system-ui, sans-serif; fill: #b45309; font-size: 12px; }
-    .curve { stroke: #ea580c; stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .marker { stroke: #b45309; stroke-width: 1.2; stroke-dasharray: 4 4; }
+    .axis { stroke: #c1ad8e; stroke-width: 1.2; }
+    .grid { stroke: #d8c9aa; stroke-width: 0.6; stroke-dasharray: 3 4; }
+    .label { font-family: "EB Garamond", Garamond, Georgia, serif; fill: #6b5a45; font-size: 14px; font-style: italic; }
+    .heading { font-family: "EB Garamond", Garamond, Georgia, serif; fill: #3a3127; font-size: 17px; font-weight: 600; letter-spacing: 0.01em; }
+    .annot { font-family: "EB Garamond", Garamond, Georgia, serif; fill: #8a5a3c; font-size: 13px; font-style: italic; }
+    .curve { stroke: #b07c5a; stroke-width: 2.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .marker { stroke: #c69b7e; stroke-width: 1.2; stroke-dasharray: 4 4; }
+    .endpt { fill: #b07c5a; }
     @media (prefers-color-scheme: dark) {
-      .axis { stroke: #64748b; }
-      .grid { stroke: #334155; }
-      .label { fill: #cbd5e1; }
-      .heading { fill: #f1f5f9; }
+      .axis { stroke: #5d503e; }
+      .grid { stroke: #3e3528; }
+      .label { fill: #b8a78d; }
+      .heading { fill: #ede1cc; }
+      .annot { fill: #d9a577; }
+      .curve { stroke: #d9a577; }
+      .marker { stroke: #b8916e; }
+      .endpt { fill: #d9a577; }
     }
   </style>
 
-  <text class="heading" x="300" y="28" text-anchor="middle">Loss curve during transformer training</text>
+  <text class="heading" x="300" y="30" text-anchor="middle">Loss curve during transformer training</text>
 
   <!-- gridlines -->
   <line class="grid" x1="80" y1="100" x2="560" y2="100" />
@@ -35,12 +40,12 @@
   <!-- phase transition marker -->
   <line class="marker" x1="270" y1="60" x2="270" y2="320" />
   <text class="annot" x="280" y="80">induction heads form</text>
-  <text class="annot" x="280" y="96">(in-context learning emerges)</text>
+  <text class="annot" x="280" y="98">in-context learning emerges</text>
 
   <!-- the loss curve -->
   <path class="curve" d="M 80 80 C 130 95, 200 135, 250 158 C 260 162, 268 165, 270 167 C 280 195, 290 228, 310 245 C 380 260, 470 285, 560 295" />
 
   <!-- start/end markers -->
-  <circle cx="80" cy="80" r="3" fill="#ea580c" />
-  <circle cx="560" cy="295" r="3" fill="#ea580c" />
+  <circle class="endpt" cx="80" cy="80" r="3.5" />
+  <circle class="endpt" cx="560" cy="295" r="3.5" />
 </svg>

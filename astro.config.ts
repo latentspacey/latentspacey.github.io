@@ -61,6 +61,14 @@ export default defineConfig({
     preserveScriptOrder: true,
     fonts: [
       {
+        name: "EB Garamond",
+        cssVariable: "--font-eb-garamond",
+        provider: fontProviders.google(),
+        fallbacks: ["Garamond", "Georgia", "serif"],
+        weights: [400, 500, 600, 700],
+        styles: ["normal", "italic"],
+      },
+      {
         name: "Google Sans Code",
         cssVariable: "--font-google-sans-code",
         provider: fontProviders.google(),

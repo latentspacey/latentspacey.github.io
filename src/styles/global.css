@@ -5,23 +5,26 @@
 
 :root,
 html[data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
-  --muted: #e6e6e6;
-  --border: #ece9e9;
+  /* Warm cream + terracotta — "old book" palette */
+  --background: #faf6ef;
+  --foreground: #3a3127;
+  --accent: #b07c5a;
+  --muted: #efe7d5;
+  --border: #e3d6bf;
 }
 
 html[data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --muted: #343f60;
-  --border: #ab4b08;
+  /* Inkwell — warm dark, soft cream text */
+  --background: #1f1b16;
+  --foreground: #ede1cc;
+  --accent: #d9a577;
+  --muted: #2e2920;
+  --border: #4a3f30;
 }
 
 @theme inline {
-  --font-app: var(--font-google-sans-code);
+  --font-app: var(--font-eb-garamond);
+  --font-mono: var(--font-google-sans-code);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
@@ -39,7 +42,21 @@ html[data-theme="dark"] {
     @apply overflow-y-scroll scroll-smooth;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/75 selection:text-background;
+    @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/30 selection:text-foreground;
+    font-feature-settings: "liga", "kern", "onum";
+    font-size: 1.125rem;
+    line-height: 1.7;
+    letter-spacing: 0.005em;
+  }
+  /* Headings: keep app font (Garamond) but a touch tighter */
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.005em;
+    font-feature-settings: "kern";
+  }
+  /* Code uses the mono font, slightly smaller relative to the larger body */
+  code, pre, kbd, samp {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.92em;
   }
   a,
   button {
@@ -64,7 +81,6 @@ html[data-theme="dark"] {
 }
 
 /* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
-/* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 1rem;
 }

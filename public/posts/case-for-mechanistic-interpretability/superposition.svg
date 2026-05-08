@@ -2,25 +2,31 @@
   <title id="title">Superposition: many features in few dimensions</title>
   <desc id="desc">A 2D plane with six labelled feature directions, illustrating that more features than dimensions can be packed into the same activation space.</desc>
   <style>
-    .axis { stroke: #cbd5e1; stroke-width: 1; stroke-dasharray: 3 4; }
-    .axislabel { font-family: -apple-system, ui-sans-serif, system-ui, sans-serif; fill: #94a3b8; font-size: 11px; }
-    .heading { font-family: -apple-system, ui-sans-serif, system-ui, sans-serif; fill: #0f172a; font-size: 14px; font-weight: 600; }
-    .vec { stroke: #0d9488; stroke-width: 2.2; }
-    .vec-overlap { stroke: #ea580c; stroke-width: 2.2; }
-    .dot { fill: #0d9488; }
-    .dot-overlap { fill: #ea580c; }
-    .featlabel { font-family: -apple-system, ui-sans-serif, system-ui, sans-serif; fill: #0f172a; font-size: 12px; }
-    .note { font-family: -apple-system, ui-sans-serif, system-ui, sans-serif; fill: #475569; font-size: 11px; font-style: italic; }
+    .axis { stroke: #d8c9aa; stroke-width: 1; stroke-dasharray: 3 4; }
+    .axislabel { font-family: "EB Garamond", Garamond, Georgia, serif; fill: #a89882; font-size: 13px; font-style: italic; }
+    .heading { font-family: "EB Garamond", Garamond, Georgia, serif; fill: #3a3127; font-size: 17px; font-weight: 600; letter-spacing: 0.01em; }
+    .vec { stroke: #7d8b6e; stroke-width: 2.4; }
+    .vec-overlap { stroke: #b07c5a; stroke-width: 2.4; }
+    .dot { fill: #7d8b6e; }
+    .dot-overlap { fill: #b07c5a; }
+    .featlabel { font-family: "EB Garamond", Garamond, Georgia, serif; fill: #3a3127; font-size: 14px; font-style: italic; }
+    .note { font-family: "EB Garamond", Garamond, Georgia, serif; fill: #8a5a3c; font-size: 12.5px; font-style: italic; }
+    .origin { fill: #6b5a45; }
     @media (prefers-color-scheme: dark) {
-      .heading { fill: #f1f5f9; }
-      .featlabel { fill: #f1f5f9; }
-      .note { fill: #cbd5e1; }
-      .axis { stroke: #475569; }
-      .axislabel { fill: #94a3b8; }
+      .heading { fill: #ede1cc; }
+      .featlabel { fill: #ede1cc; }
+      .note { fill: #d9a577; }
+      .axis { stroke: #4a3f30; }
+      .axislabel { fill: #8d7e69; }
+      .vec { stroke: #a8b394; }
+      .vec-overlap { stroke: #d9a577; }
+      .dot { fill: #a8b394; }
+      .dot-overlap { fill: #d9a577; }
+      .origin { fill: #b8a78d; }
     }
   </style>
 
-  <text class="heading" x="300" y="28" text-anchor="middle">Superposition: many features in few dimensions</text>
+  <text class="heading" x="300" y="30" text-anchor="middle">Superposition: many features, few dimensions</text>
 
   <!-- coordinate axes -->
   <line class="axis" x1="120" y1="200" x2="480" y2="200" />
@@ -29,40 +35,35 @@
   <text class="axislabel" x="306" y="56">d₂</text>
 
   <!-- origin -->
-  <circle cx="300" cy="200" r="2.5" fill="#475569" />
+  <circle class="origin" cx="300" cy="200" r="2.5" />
 
-  <!-- 6 feature vectors radiating out, two pairs are close (overlap) -->
-  <!-- vec 1: 'cat' at 30 deg up-right; vec 2: 'blue' very close at 35 deg up-right (overlap pair) -->
+  <!-- 6 feature vectors, two of them ("cat" and "blue") share a near-direction -->
   <line class="vec-overlap" x1="300" y1="200" x2="416" y2="142" />
-  <circle class="dot-overlap" cx="416" cy="142" r="3.5" />
+  <circle class="dot-overlap" cx="416" cy="142" r="3.8" />
   <text class="featlabel" x="424" y="138">"cat"</text>
 
   <line class="vec-overlap" x1="300" y1="200" x2="404" y2="118" />
-  <circle class="dot-overlap" cx="404" cy="118" r="3.5" />
+  <circle class="dot-overlap" cx="404" cy="118" r="3.8" />
   <text class="featlabel" x="412" y="114">"blue"</text>
 
-  <!-- vec 3: 'music' upper-left -->
   <line class="vec" x1="300" y1="200" x2="220" y2="110" />
-  <circle class="dot" cx="220" cy="110" r="3.5" />
-  <text class="featlabel" x="170" y="106">"music"</text>
+  <circle class="dot" cx="220" cy="110" r="3.8" />
+  <text class="featlabel" x="166" y="106">"music"</text>
 
-  <!-- vec 4: 'fire' left -->
   <line class="vec" x1="300" y1="200" x2="172" y2="220" />
-  <circle class="dot" cx="172" cy="220" r="3.5" />
+  <circle class="dot" cx="172" cy="220" r="3.8" />
   <text class="featlabel" x="118" y="224">"fire"</text>
 
-  <!-- vec 5: 'tree' lower-left -->
   <line class="vec" x1="300" y1="200" x2="216" y2="296" />
-  <circle class="dot" cx="216" cy="296" r="3.5" />
+  <circle class="dot" cx="216" cy="296" r="3.8" />
   <text class="featlabel" x="160" y="300">"tree"</text>
 
-  <!-- vec 6: 'anger' lower-right -->
   <line class="vec" x1="300" y1="200" x2="408" y2="290" />
-  <circle class="dot" cx="408" cy="290" r="3.5" />
+  <circle class="dot" cx="408" cy="290" r="3.8" />
   <text class="featlabel" x="416" y="294">"anger"</text>
 
   <!-- annotation explaining overlap -->
   <text class="note" x="430" y="170" text-anchor="start">"cat" and "blue" share a</text>
-  <text class="note" x="430" y="184" text-anchor="start">direction → polysemantic</text>
-  <text class="note" x="430" y="198" text-anchor="start">neuron</text>
+  <text class="note" x="430" y="186" text-anchor="start">near direction — a single</text>
+  <text class="note" x="430" y="202" text-anchor="start">neuron lights up for both</text>
 </svg>
